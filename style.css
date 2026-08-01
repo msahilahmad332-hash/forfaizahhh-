@@ -1,0 +1,691 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+background:#050816;
+color:white;
+overflow-x:hidden;
+
+}
+
+/* ===========================
+BACKGROUND
+=========================== */
+
+body::before{
+
+content:'';
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+background:
+radial-gradient(circle at 20% 20%,rgba(0,255,255,.18),transparent 40%),
+radial-gradient(circle at 80% 30%,rgba(255,0,180,.15),transparent 35%),
+radial-gradient(circle at 50% 80%,rgba(80,120,255,.20),transparent 40%),
+linear-gradient(180deg,#050816,#091120,#050816);
+
+z-index:-3;
+
+animation:aurora 15s ease-in-out infinite alternate;
+
+}
+
+@keyframes aurora{
+
+0%{
+filter:hue-rotate(0deg);
+transform:scale(1);
+}
+
+100%{
+filter:hue-rotate(35deg);
+transform:scale(1.1);
+}
+
+}
+
+/* ===========================
+STARS
+=========================== */
+
+#stars{
+
+position:fixed;
+width:100%;
+height:100%;
+left:0;
+top:0;
+background-image:
+radial-gradient(white 1px,transparent 1px);
+
+background-size:55px 55px;
+
+opacity:.28;
+
+animation:starsMove 120s linear infinite;
+
+z-index:-2;
+
+}
+
+@keyframes starsMove{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-800px);
+
+}
+
+}
+
+/* ===========================
+LOADER
+=========================== */
+
+#loader{
+
+position:fixed;
+width:100%;
+height:100vh;
+background:#03050d;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+z-index:9999;
+
+transition:1s;
+
+}
+
+.loader-heart{
+
+width:90px;
+height:90px;
+
+border-radius:50%;
+
+background:linear-gradient(45deg,#ff4d8d,#ff99cc);
+
+box-shadow:
+
+0 0 40px #ff5ea8,
+0 0 90px #ff5ea8;
+
+animation:pulse 1.5s infinite;
+
+margin-bottom:25px;
+
+}
+
+@keyframes pulse{
+
+50%{
+
+transform:scale(1.2);
+
+}
+
+}
+
+/* ===========================
+HERO
+=========================== */
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+padding:30px;
+
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:60px;
+
+font-family:'Great Vibes',cursive;
+
+margin-bottom:20px;
+
+text-shadow:0 0 25px rgba(255,255,255,.4);
+
+}
+
+.name{
+
+font-size:34px;
+
+font-weight:600;
+
+margin-bottom:30px;
+
+color:#ffd3ea;
+
+}
+
+.typing{
+
+font-size:19px;
+
+max-width:720px;
+
+line-height:1.8;
+
+opacity:.92;
+
+margin-bottom:45px;
+
+}
+
+/* ===========================
+BUTTON
+=========================== */
+
+button{
+
+padding:16px 42px;
+
+border:none;
+
+border-radius:50px;
+
+background:rgba(255,255,255,.10);
+
+backdrop-filter:blur(18px);
+
+color:white;
+
+font-size:17px;
+
+cursor:pointer;
+
+transition:.4s;
+
+border:1px solid rgba(255,255,255,.15);
+
+}
+
+button:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+
+0 15px 40px rgba(255,255,255,.15);
+
+}
+
+/* ===========================
+SECTIONS
+=========================== */
+
+section{
+
+padding:100px 25px;
+
+}
+
+section h2{
+
+font-size:38px;
+
+margin-bottom:40px;
+
+text-align:center;
+
+font-family:'Great Vibes';
+
+}
+
+/* ===========================
+GLASS EFFECT
+=========================== */
+
+.glass{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:25px;
+
+}
+
+/* ===========================
+SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#ffffff55;
+
+border-radius:20px;
+
+}
+
+/* ===========================
+RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:44px;
+
+}
+
+.name{
+
+font-size:26px;
+
+}
+
+.typing{
+
+font-size:16px;
+
+padding:0 10px;
+
+}
+
+button{
+
+width:90%;
+
+max-width:320px;
+
+}
+
+section h2{
+
+font-size:30px;
+
+}
+
+}/* ===========================================
+   ENVELOPE
+=========================================== */
+
+.envelope-section{
+
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+
+}
+
+.envelope{
+
+width:340px;
+height:240px;
+
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+
+border-radius:18px;
+
+position:relative;
+
+cursor:pointer;
+
+transition:.7s;
+
+overflow:hidden;
+
+box-shadow:
+0 20px 50px rgba(0,0,0,.45);
+
+}
+
+.envelope:hover{
+
+transform:translateY(-15px) scale(1.03);
+
+}
+
+.envelope::before{
+
+content:'💌';
+
+position:absolute;
+
+font-size:60px;
+
+left:50%;
+
+top:40%;
+
+transform:translate(-50%,-50%);
+
+transition:.6s;
+
+}
+
+.letter{
+
+position:absolute;
+
+left:50%;
+top:110%;
+
+transform:translateX(-50%);
+
+width:90%;
+padding:25px;
+
+background:white;
+
+color:#222;
+
+border-radius:18px;
+
+transition:1s;
+
+line-height:1.8;
+
+}
+
+.envelope:hover .letter{
+
+top:5%;
+
+}
+
+.envelope:hover::before{
+
+opacity:0;
+
+}
+
+/* ===========================================
+   GALLERY
+=========================================== */
+
+.grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+}
+
+.grid img{
+
+width:100%;
+
+height:330px;
+
+object-fit:cover;
+
+border-radius:22px;
+
+transition:.6s;
+
+cursor:pointer;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.35);
+
+}
+
+.grid img:hover{
+
+transform:scale(1.08) rotate(-2deg);
+
+box-shadow:
+0 0 40px rgba(255,255,255,.35);
+
+}
+
+/* ===========================================
+VIDEOS
+=========================================== */
+
+.video-box{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
+
+gap:25px;
+
+}
+
+.video-box video{
+
+width:100%;
+
+border-radius:25px;
+
+box-shadow:
+0 20px 40px rgba(0,0,0,.5);
+
+}
+
+/* ===========================================
+MUSIC
+=========================================== */
+
+.music{
+
+text-align:center;
+
+}
+
+.songs{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.songs button{
+
+background:linear-gradient(45deg,#ff5fa2,#7c7cff);
+
+}
+
+/* ===========================================
+FINAL
+=========================================== */
+
+.final{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:40px;
+
+}
+
+.final h1{
+
+font-family:"Great Vibes";
+
+font-size:52px;
+
+line-height:1.5;
+
+text-shadow:
+0 0 25px rgba(255,255,255,.25);
+
+}
+
+/* ===========================================
+FLOATING HEARTS
+=========================================== */
+
+.heart{
+
+position:fixed;
+
+bottom:-50px;
+
+font-size:18px;
+
+animation:heartUp linear forwards;
+
+pointer-events:none;
+
+}
+
+@keyframes heartUp{
+
+0%{
+
+transform:
+translateY(0)
+scale(.5);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translateY(-120vh)
+scale(1.5);
+
+opacity:0;
+
+}
+
+}
+
+/* ===========================================
+SHOOTING STAR
+=========================================== */
+
+.shooting-star{
+
+position:fixed;
+
+width:3px;
+
+height:3px;
+
+background:white;
+
+box-shadow:0 0 18px white;
+
+border-radius:50%;
+
+animation:shoot 5s linear infinite;
+
+}
+
+@keyframes shoot{
+
+0%{
+
+left:-100px;
+top:10%;
+
+}
+
+100%{
+
+left:110%;
+top:80%;
+
+}
+
+}
+
+/* ===========================================
+MOON
+=========================================== */
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:180px;
+height:180px;
+
+right:60px;
+top:60px;
+
+border-radius:50%;
+
+background:
+radial-gradient(circle,#fff,#ddd,#bbb);
+
+box-shadow:
+0 0 80px rgba(255,255,255,.4);
+
+z-index:-1;
+
+opacity:.85;
+
+}
